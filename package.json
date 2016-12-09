@@ -1,0 +1,27 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bibifun/NodeJs-blog.git"
+  },
+  "author": "wangwei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bibifun/NodeJs-blog/issues"
+  },
+  "homepage": "https://github.com/bibifun/NodeJs-blog#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookies": "^0.6.2",
+    "express": "^4.14.0",
+    "markdown": "^0.5.0",
+    "mongoose": "^4.7.2",
+    "swig": "^1.4.2"
+  }
+}
