@@ -4,6 +4,9 @@
 var express = require('express');
 //加载模板模块
 var swig = require('swig');
+//加载数据库模块
+var mongoose = require('mongoose');
+
 
 //创建app应用 => NodeJS Http.createServer();
 var app = express();
@@ -26,16 +29,22 @@ app.set('view engine','html');
 //在开发过程中需要取消模板缓存
 swig.setDefaults({cache:false})
 
+//根据不同的功能划分模块 分模块进行开发
+app.use('/admin',require('./routers/admin'));
+app.use('/api',require('./routers/api'));
+app.use('/',require('./routers/main'));
+
+
 
 //首页
-app.get('/',function (req,res,next) {
-	//res.send('<h1>欢迎光临我的博客</ht>')
-
-	//读取views目录下的指定文件 ，解析并返回客户端
-	//第一个参数：表示模板的文件 相对路径 views/index.html
-	//第二个参数：传递给模板使用的数据
-	res.render('index');
-})
+// app.get('/',function (req,res,next) {
+// 	//res.send('<h1>欢迎光临我的博客</ht>')
+//
+// 	//读取views目录下的指定文件 ，解析并返回客户端
+// 	//第一个参数：表示模板的文件 相对路径 views/index.html
+// 	//第二个参数：传递给模板使用的数据
+// 	res.render('index');
+// })
 
 // app.get('/main.css',function(req,res,next) {
 // 	res.setHeader('content-type','text/css');
